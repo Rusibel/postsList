@@ -1,0 +1,24 @@
+@import 'src/styles/variables/index.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+
+
+  .left {
+    width: 1.5rem;
+    @media screen and (min-width: $large) {
+      margin-left: calc(20%);
+    }
+  }
+
+  .right {
+    width: 1.5rem;
+    @media screen and (min-width: $large) {
+      margin-right: calc(20%);
+    }
+  }
+}

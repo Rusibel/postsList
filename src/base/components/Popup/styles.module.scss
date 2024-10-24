@@ -1,0 +1,143 @@
+@import 'src/styles/variables/index.scss';
+@import 'src/styles/mixins/animation.scss';
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+
+  &-closed {
+    display: none;
+  }
+
+  &-opened {
+    display: block;
+  }
+}
+
+.popup {
+  &-centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-modal {
+    border-radius: $ROUNDING_L;
+    background: $WHITE;
+    color: $WHITE;
+    z-index: 10;
+    overflow-y: auto;
+    max-height: 85vh;
+    width: 92vw;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $medium) {
+      max-width: 600px;
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+
+      &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 120%;
+        text-align: center;
+        color: $POPUP_TEXT;
+        flex: 1 1 auto;
+        padding-left: 2.1875rem;
+
+        &-center {
+          padding: 0;
+        }
+      }
+
+      &__closeIcon {
+        display: flex;
+        cursor: pointer;
+      }
+    }
+
+    &-subtitle {
+      display: flex;
+      margin-top: 0.75rem;
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 120%;
+      justify-content: center;
+      text-align: center;
+      color: $POPUP_TEXT;
+    }
+
+    &-footer {
+      display: flex;
+      gap: 12px;
+
+      button {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.popup-body__opened {
+  overflow: hidden;
+}
+
+.BottomSheet {
+  background: transparent;
+  position: absolute;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: 98px;
+  transform: none;
+
+  .popup {
+    &-centered {
+      transform: none;
+      top: auto;
+      left: auto;
+      bottom: calc($bottomMenuFixedHeight - 0.3rem);
+      @include animation-slide-up-enter(100%);
+
+      &.willBeClosed {
+        @include animation-slide-down-exit(100%);
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &-modal {
+      width: 100vw;
+      max-width: inherit;
+      padding: 15% 1rem 10%;
+      box-shadow: $CARD_SHADOW;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 56px;
+        height: 5px;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        background-color: $NEUTRAL_GREY;
+      }
+    }
+  }
+}

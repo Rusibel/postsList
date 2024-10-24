@@ -1,0 +1,74 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+input,
+select,
+option,
+button,
+textarea,
+a,
+a img,
+img {
+  outline: none;
+}
+
+a img {
+  border: none;
+}
+
+div,
+header,
+footer,
+section,
+aside,
+article,
+ul,
+ol,
+li,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+select,
+option,
+button,
+textarea,
+fieldset,
+form {
+  box-sizing: border-box;
+}

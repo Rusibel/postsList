@@ -1,0 +1,68 @@
+@import 'src/styles/variables/index.scss';
+
+.button {
+  max-width: 500px;
+  border-radius: $ROUNDING_L;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 120%;
+  padding: 0 0.5rem;
+
+  &_primary {
+    background-color: $BUTTON_PRIMARY_BG;
+    color: $WHITE;
+  }
+
+  &_secondary {
+    background-color: $BUTTON_SECONDARY_BG;
+    color: $BUTTON_SECONDARY_TEXT;
+  }
+
+  &_action {
+    background-color: $BUTTON_ACTION_BG;
+    color: $BUTTON_PRIMARY_TEXT;
+  }
+
+  &:disabled {
+    background-color: $BUTTON_SECONDARY_BG;
+    color: $DISABLED_COLOR;
+    cursor: not-allowed;
+  }
+
+  &_full-width {
+    width: 100%;
+    max-width: initial;
+  }
+
+  &_size {
+    &-xs {
+      max-width: 130px;
+      height: 28px;
+      font-size: 0.7rem;
+    }
+
+    &-s {
+      max-width: 150px;
+      height: 32px;
+      font-size: 0.8rem;
+    }
+
+    &-m {
+      max-width: 400px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    &-l {
+      max-width: 500px;
+      height: 54px;
+      font-size: 1.1rem;
+    }
+  }
+
+  &_withPadding {
+    padding: 0 1.5rem;
+  }
+}

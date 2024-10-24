@@ -1,0 +1,128 @@
+$FONT_XXXL: 34px;
+$FONT_XXL: 20px;
+$FONT_XL: 18px;
+$FONT_L: 16px;
+$FONT_M: 14px;
+$FONT_S: 12px;
+$FONT_XS: 10px;
+
+$ICON_SIZE: 16px;
+
+$LINE_HEIGHT: 1.2;
+$MOSCOW_SANS_X: 'Moscow Sans X';
+$MOSCOW_SANS: 'MoscowSans';
+$MOSCOW_SANS_X_LIGHT: 'Moscow Sans X Light';
+$MOSCOW_SANS_X_BOLD: 'Moscow Sans X Bold';
+
+@mixin font-xxxl($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_XXXL;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-xxl($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_XXL;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-xl($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_XL;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-l($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_L;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-m($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_M;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-s($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_S;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-xs($font-weight: 400, $font-style: normal) {
+  font-size: $FONT_XS;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-xxl-light($font-weight: 700, $font-style: normal) {
+  font-family: $MOSCOW_SANS_X;
+  font-size: $FONT_XL;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-medium-light($font-weight: 300, $font-style: normal) {
+  font-family: $MOSCOW_SANS_X;
+  font-size: $FONT_L;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-small-light($font-weight: 300, $font-style: normal) {
+  font-family: $MOSCOW_SANS_X;
+  font-size: $FONT_M;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-moscow-sans-l($font-weight: 300, $font-style: normal) {
+  font-family: $MOSCOW_SANS;
+  font-size: $FONT_L;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-moscow-sans-m($font-weight: 400, $font-style: normal) {
+  font-family: $MOSCOW_SANS;
+  font-size: $FONT_M;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-moscow-sans-xl($font-weight: 600, $font-style: normal) {
+  font-family: $MOSCOW_SANS;
+  font-size: $FONT_XL;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-moscow-sans-xxl($font-weight: 600, $font-style: normal) {
+  font-family: $MOSCOW_SANS;
+  font-size: $FONT_XXL;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin font-moscow-sans-s($font-weight: 300, $font-style: normal) {
+  font-family: $MOSCOW_SANS;
+  font-size: $FONT_S;
+  line-height: $LINE_HEIGHT;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}

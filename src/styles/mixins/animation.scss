@@ -1,0 +1,53 @@
+@import '../variables/animation.scss';
+
+@mixin animation-opacity-enter() {
+  @keyframes opacity-enter {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  animation: opacity-enter $ANIMATION_ENTER;
+}
+
+@mixin animation-slide-down-enter($slide-height: 200px) {
+  @keyframes slide-down-enter {
+    0% {
+      transform: translateY(-$slide-height);
+    }
+
+    100% {
+      transform: none;
+    }
+  }
+  animation: slide-down-enter $ANIMATION_ENTER;
+}
+
+@mixin animation-slide-up-enter($slide-height: 200px) {
+  @keyframes slide-up-enter {
+    0% {
+      transform: translateY($slide-height);
+    }
+
+    100% {
+      transform: none;
+    }
+  }
+  animation: slide-up-enter $ANIMATION_ENTER;
+}
+
+@mixin animation-slide-down-exit($slide-height: 200px) {
+  @keyframes slide-up-exit {
+    0% {
+      transform: none;
+    }
+
+    100% {
+      transform: translateY($slide-height);
+    }
+  }
+  animation: slide-up-exit $ANIMATION_EXIT;
+}

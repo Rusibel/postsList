@@ -1,0 +1,12 @@
+@import 'src/styles/variables/colors';
+
+@mixin link {
+  color: $PRIMARY_LINK_COLOR;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: $PRIMARY_LINK_HOVER_COLOR;
+    text-decoration: underline;
+  }
+}

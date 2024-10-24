@@ -1,0 +1,163 @@
+@import 'src/styles/variables/index.scss';
+@import 'src/styles/mixins/typography.scss';
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100% + $bottomMenuFixedBottom);
+  height: calc(100% + $bottomMenuFixedBottom);
+  background: $SCREEN_BG;
+
+  @media screen and (max-width: $medium) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .topPanel {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: $topMenuFixedHeight;
+    padding: 50px 16px 0 16px;
+    background: $SCREEN_BG;
+
+    @media screen and (min-width: $large) {
+      padding: 50px 50px 0 50px;
+    }
+
+    .iconLeft {
+      width: 23px;
+      height: 23px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        stroke: $TOP_MENU_IC_COLOR;
+      }
+    }
+
+    .title {
+      height: 34px;
+    }
+
+    .rightIcon {
+      width: 34px;
+      height: 34px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        stroke: $TOP_MENU_IC_COLOR;
+      }
+    }
+  }
+
+  .content {
+    overflow: auto;
+    position: relative;
+    height: 100%;
+
+    @media screen and (min-width: $large) {
+      padding: 50px 20% 0 20%;
+    }
+
+    &_withTop {
+      padding-top: calc($topMenuFixedHeight);
+    }
+
+    &_withBottomMenu {
+      height: calc(100% - $bottomMenuFixedHeight);
+    }
+
+    .version {
+      @include font-l;
+      color: $NEUTRAL_GREY;
+      position: fixed;
+      left: calc(50% - 48px);
+      bottom: calc($bottomMenuFixedHeight + 20px);
+    }
+  }
+
+  .bottomMenu {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: $bottomMenuFixedBottom;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: $bottomMenuFixedHeight;
+    border-radius: 14px 14px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px 0;
+    background: $WHITE;
+    overflow: hidden;
+
+    @media screen and (min-width: $large) {
+      padding: 0 20%;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        width: calc(100% / 2);
+        margin: 0;
+        padding: 0;
+        transition: background ease-in-out 0.3s;
+        border: 1px;
+
+        &:hover {
+          background: rgba(214, 211, 211, 0.2);
+          cursor: pointer;
+        }
+
+        a {
+          display: block;
+          height: 100%;
+          padding-top: 20px;
+
+          .linkBtn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            color: $NEUTRAL_GREY;
+
+            &_active {
+              color: $BLACK;
+            }
+
+            svg {
+              stroke: $MENU_ICON_COLOR;
+            }
+
+            .text {
+              margin-top: 6px;
+              @include font-xl;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 670px) {
+  .container .content .version {
+    display: flex;
+    position: initial;
+    margin: 1rem 0 2rem;
+    justify-content: center;
+  }
+}
