@@ -18,7 +18,7 @@ export const ButtonIcon: FC<IButtonIconProps> = ({
 }) => {
   return (
     <button
-      className={cx(styles.VBButtonIcon, className)}
+      className={cx(styles.buttonIcon, className)}
       disabled={disabled}
       type="button"
       {...restProps}

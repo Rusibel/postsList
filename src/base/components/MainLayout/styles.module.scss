@@ -6,7 +6,7 @@
   width: 100%;
   min-height: calc(100% + $bottomMenuFixedBottom);
   height: calc(100% + $bottomMenuFixedBottom);
-  background: $SCREEN_BG;
+  background: $PALE_GREY;
 
   @media screen and (max-width: $medium) {
     display: flex;
@@ -23,7 +23,7 @@
     width: 100%;
     height: $topMenuFixedHeight;
     padding: 50px 16px 0 16px;
-    background: $SCREEN_BG;
+    background: $PALE_GREY;
 
     @media screen and (min-width: $large) {
       padding: 50px 50px 0 50px;

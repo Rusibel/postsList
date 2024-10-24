@@ -9,11 +9,12 @@ interface IParams {
 export const createPostAction = async ({ data }: IParams): Promise<void> => {
   postsStore.setLoading();
   try {
-    await axiosInstance<IPost>({
+    const res = await axiosInstance<IPost>({
       method: 'post',
       url: `/posts`,
       data,
     });
+    console.log('create post with data: ', res.data);
 
     postsStore.setReady();
   } catch (e) {

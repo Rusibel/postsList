@@ -7,17 +7,16 @@ const servUrl =
 
 export const axiosInstance = axios.create({
   baseURL: `${servUrl}`,
-  withCredentials: true,
 });
 
-export const axiosInstancePhotos = axios.create({
-  baseURL: `/photos`, //к https://picsum.photos/ - нет доступа, ошибка 403
-  withCredentials: true,
-});
+// export const axiosInstancePhotos = axios.create({
+//   baseURL: `/photos`, //к https://picsum.photos/ - нет доступа, ошибка 403
+//   withCredentials: true,
+// });
 
 axiosInstance.interceptors.response.use(
   (res) => {
-    console.log(`resUrl:  ${res.request.responseURL}`, res.data);
+    // console.log(`resUrl:  ${res.request.responseURL}`, res.data); //мониторинг ответа
     return res;
   },
   (error) => {

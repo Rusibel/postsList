@@ -10,18 +10,18 @@ export default defineConfig({
   server: {
     port: 3000,
     cors: false,
-    proxy: {
-      '/photos': {
-        target: `https://picsum.photos`,
-        changeOrigin: true,
-        autoRewrite: true,
-        secure: true,
-        rewrite: (path) => {
-          console.log(path);
-          return path.replace(/^\/photos/, 'https://picsum.photos');
-        },
-      },
-    },
+    // proxy: {
+    //   '/photos': {
+    //     target: `https://picsum.photos`, //- не работает
+    //     changeOrigin: true,
+    //     autoRewrite: true,
+    //     secure: true,
+    //     rewrite: (path) => {
+    //       console.log(path);
+    //       return path.replace(/^\/photos/, 'https://picsum.photos');
+    //     },
+    //   },
+    // },
   },
   plugins: [svgr(), react(), eslint()],
   resolve: {
@@ -30,19 +30,6 @@ export default defineConfig({
   css: {
     modules: {
       localsConvention: 'camelCase',
-    },
-    preprocessorOptions: {
-      scss: {
-        additionalData: `
-          @use "./src/styles/variables/colors.scss";
-          @use "./src/styles/variables/animation.scss";
-          @use "src/styles/variables/constants";
-          @use "./src/styles/variables/gradients.scss";
-          @use "./src/styles/variables/roundings.scss";
-          @use "./src/styles/variables/screens.scss";
-          @use "src/styles/variables/shadows";
-        `,
-      },
     },
   },
 });

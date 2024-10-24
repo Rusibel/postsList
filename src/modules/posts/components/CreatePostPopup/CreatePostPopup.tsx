@@ -13,17 +13,9 @@ export const CreatePostPopup: FC<IProps> = ({ onCloseHandler, isOpen }) => {
   const navigate = useNavigate();
 
   const handleSubmit = useCallback(async () => {
-    // e.preventDefault();
-    // console.log(formData);
     if (ref.current) {
       const data = new FormData(ref.current);
-      console.log(
-        'formdata: ',
-        ref.current,
-        data.get('title'),
-        data.get('body'),
-        data.get('userId'),
-      );
+
       createPostAction({ data }).then(() => {
         navigate('/posts', { state: { page: 11 } });
         onCloseHandler();
@@ -52,19 +44,6 @@ export const CreatePostPopup: FC<IProps> = ({ onCloseHandler, isOpen }) => {
           <TextField required id="body" name="body" label="description" />
         </div>
       </Box>
-      {/*<div>*/}
-      {/*  <label htmlFor="userId">User ID:</label>*/}
-      {/*  <input type="number" id="userId" name="userId" required />*/}
-      {/*</div>*/}
-      {/*<div>*/}
-      {/*  <label htmlFor="title">Title:</label>*/}
-      {/*  <input type="text" id="title" name="title" required />*/}
-      {/*</div>*/}
-      {/*<div>*/}
-      {/*  <label htmlFor="description">Description:</label>*/}
-      {/*  <textarea id="body" name="body" required />*/}
-      {/*</div>*/}
-      {/*</form>*/}
     </Popup>
   );
 };
